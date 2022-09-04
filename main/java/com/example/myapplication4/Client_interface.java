@@ -38,20 +38,7 @@ public class Client_interface extends AppCompatActivity {
                     Toast.makeText(Client_interface.this, R.string.no_user_input,
                             Toast.LENGTH_LONG).show();
                 }
-                else{
-                    String request = "consultation " + find_by_stage;
-                    String response = work_with_server.send_get(request);
-                    if (!response.equals("error")){
-                        if(response.equals("has_doctor")){
-                            Toast.makeText(Client_interface.this, R.string.has_doctor,
-                                    Toast.LENGTH_LONG).show();
-                        }
-                        else {
-                            Toast.makeText(Client_interface.this, R.string.no_doctor,
-                                    Toast.LENGTH_LONG).show();
-                        }
-                    }
-                }
+                
             }
         });
     }
