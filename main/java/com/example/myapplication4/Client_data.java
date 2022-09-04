@@ -42,4 +42,5 @@ public class Client_data extends AppCompatActivity {
         change_weight = findViewById(R.id.change_weight);
         change_height = findViewById(R.id.change_height);
 
-        
+    } 
+}
