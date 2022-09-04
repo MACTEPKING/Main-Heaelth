@@ -44,28 +44,7 @@ public class Enter_to_system extends AppCompatActivity {
                     Toast.makeText(Enter_to_system.this, R.string.no_user_input,
                             Toast.LENGTH_LONG).show();
                 }
-                else{
-                    String request = check_user_name.getText().toString().trim() + " " +
-                            check_user_surname.getText().toString().trim() + " " +
-                            check_user_email.getText().toString().trim() + " " +
-                            check_user_password.getText().toString().trim() + " " +
-                            check_user_gender.getText().toString().trim() + " " +
-                            Integer.parseInt(check_user_age.getText().toString().trim()) + " " +
-                            check_user_date_of_birth.getText().toString().trim();
-                    com.example.myapplication4.Work_with_server wws = new com.example.myapplication4.Work_with_server();
-                    String response = wws.send_get("client_enter" + request);
-                    if (!response.equals("error")){
-                        if(response.equals("has same user")){
-                            Intent intent = new Intent(Enter_to_system.this, Client_interface.class);
-                            intent.putExtra("client", request);
-                            startActivity(intent);
-                        }
-                        else {
-                            Toast.makeText(Enter_to_system.this, R.string.no_same_user,
-                                    Toast.LENGTH_LONG).show();
-                        }
-                    }
-                }
+                
             }
         });
         doctor_finish_check.setOnClickListener(new View.OnClickListener() {
@@ -81,27 +60,7 @@ public class Enter_to_system extends AppCompatActivity {
                     Toast.makeText(Enter_to_system.this, R.string.no_user_input,
                             Toast.LENGTH_LONG).show();
                 }
-                else{
-                    String request = check_user_name.getText().toString().trim() + " " +
-                            check_user_surname.getText().toString().trim() + " " +
-                            check_user_email.getText().toString().trim() + " " +
-                            check_user_password.getText().toString().trim() + " " +
-                            check_user_gender.getText().toString().trim() + " " +
-                            Integer.parseInt(check_user_age.getText().toString().trim()) + " " +
-                            check_user_date_of_birth.getText().toString().trim();
-                    String response = wor_with_server.send_get("doctor_enter" + request);
-                    if (!response.equals("error")){
-                        if(response.equals("has same user")){
-                            Intent intent = new Intent(Enter_to_system.this, Doctor_interface.class);
-                            intent.putExtra("doctor", request);
-                            startActivity(intent);
-                        }
-                        else {
-                            Toast.makeText(Enter_to_system.this, R.string.no_same_user,
-                                    Toast.LENGTH_LONG).show();
-                        }
-                    }
-                }
+                
             }
         });
     }
