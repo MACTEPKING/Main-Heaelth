@@ -32,24 +32,7 @@ public class Registration extends AppCompatActivity {
                     Toast.makeText(Registration.this, R.string.no_user_input,
                             Toast.LENGTH_LONG).show();
                 }
-                else{
-                    Intent intent = getIntent();
-                    String request = "client_registration " + intent.getStringExtra("user") + " " +
-                            client_weight.getText().toString().trim() + " " +
-                            client_height.getText().toString().trim();
-                    String response = work_with_server.send_get(request);
-                    if (!response.equals("error")){
-                        if(response.equals("not same user")){
-                            Intent intent1 = new Intent(Registration.this, Client_interface.class);
-                            intent1.putExtra("client", request);
-                            startActivity(intent1);
-                        }
-                        else {
-                            Toast.makeText(Registration.this, R.string.has_same_user,
-                                    Toast.LENGTH_LONG).show();
-                        }
-                    }
-                }
+                
             }
         });
     }
