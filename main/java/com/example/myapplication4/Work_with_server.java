@@ -11,31 +11,5 @@ public class Work_with_server {
     private Scanner in;
     private PrintWriter out;
 
-    public String send_get(String request) {
-        try {
-            try {
-                clintSocket = new Socket("127.0.0.1", 9999);
-                //clientSocket.connect(new InetSocketAddress("localhost", 7777));
-                in = new Scanner(clintSocket.getInputStream());
-                System.out.println("before writeUTF");
-                DataOutputStream out = new DataOutputStream(clintSocket.getOutputStream());
-
-                out.writeUTF(request);
-                System.out.println("After writeUTF");
-
-                return in.nextLine();
-            } finally {
-                //clientSocket.close();
-                System.out.println("hello");
-            }
-
-        }
-        catch (UnknownHostException e) {
-            System.err.println("Don't know about host ");
-            return "error";}
-        catch (IOException e) {
-            e.printStackTrace();
-            return "error";
-        }
-    }
+    
 }
