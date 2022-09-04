@@ -30,23 +30,7 @@ public class Doctor_registration extends AppCompatActivity {
                     Toast.makeText(Doctor_registration.this, R.string.no_user_input,
                             Toast.LENGTH_LONG).show();
                 }
-                else{
-                    Intent intent = getIntent();
-                    String request = "doctor_registration " + intent.getStringExtra("user") +
-                            " " + doctor_stage.getText().toString().trim();
-                    String response = work_with_server.send_get(request);
-                    if (!response.equals("error")){
-                        if(response.equals("not same user")){
-                            Intent intent1 = new Intent(Doctor_registration.this, Doctor_interface.class);
-                            intent1.putExtra("doctor", request);
-                            startActivity(intent1);
-                        }
-                        else {
-                            Toast.makeText(Doctor_registration.this, R.string.has_same_user,
-                                    Toast.LENGTH_LONG).show();
-                        }
-                    }
-                }
+                
             }
         });
     }
